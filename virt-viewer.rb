@@ -1,8 +1,8 @@
 class VirtViewer < Formula
   desc "App for virtualized guest interaction"
   homepage "https://virt-manager.org/"
-  url "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-6.0.tar.gz"
-  sha256 "9037bd7773da4dae761871ec1ab646cfefb4d7e48b1504dddf315a548ccb18b2"
+  url "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-7.0.tar.gz"
+  sha256 "47c2cfaa376f5f20968c0addfd65c62b90cab4e6336febf2bc44499d4cdcc903"
 
   depends_on "intltool" => :build
   depends_on "libtool" => :build
@@ -22,7 +22,6 @@ class VirtViewer < Formula
                           "--disable-update-mimedb",
                           "--with-gtk-vnc",
                           "--with-spice-gtk",
-                          "--with-gtk=3.0",
                           "--prefix=#{prefix}"
     system "make", "install"
   end

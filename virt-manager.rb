@@ -5,12 +5,13 @@ class VirtManager < Formula
   homepage "https://virt-manager.org/"
   url "https://virt-manager.org/download/sources/virt-manager/virt-manager-1.5.1.tar.gz"
   sha256 "ee889d59110986391a394077f004f68125e01e216a5e7cfc29adb6ae49ab2dab"
+  revision 2
 
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "dbus"
   depends_on "adwaita-icon-theme"
+  depends_on "dbus"
   depends_on "gtk+3"
   depends_on "gtk-vnc"
   depends_on "hicolor-icon-theme"
@@ -18,24 +19,26 @@ class VirtManager < Formula
   depends_on "libvirt"
   depends_on "libvirt-glib"
   depends_on "libxml2"
+  depends_on "osinfo-db"
+  depends_on "py2cairo"
   depends_on "pygobject3" => "with-python@2"
+  depends_on "python@2" if MacOS.version <= :snow_leopard
   depends_on "spice-gtk"
   depends_on "vte3"
-  depends_on "python@2" if MacOS.version <= :snow_leopard
 
   resource "libvirt-python" do
-    url "https://libvirt.org/sources/python/libvirt-python-4.2.0.tar.gz"
-    sha256 "27705ee0046055b794468015c43861e8281695235d17007952547631cc6912dc"
+    url "https://libvirt.org/sources/python/libvirt-python-4.6.0.tar.gz"
+    sha256 "9673952acc542a61c008e77963cef420534d1f893c4c423864b9cc9bbdb6b139"
   end
 
   resource "idna" do
-    url "https://pypi.io/packages/source/i/idna/idna-2.6.tar.gz"
-    sha256 "2c6a5de3089009e3da7c5dde64a141dbc8551d5b7f6cf4ed7c2568d0cc520a8f"
+    url "https://pypi.io/packages/source/i/idna/idna-2.7.tar.gz"
+    sha256 "684a38a6f903c1d71d6d5fac066b58d7768af4de2b832e426ec79c30daa94a16"
   end
 
   resource "certifi" do
-    url "https://pypi.io/packages/source/c/certifi/certifi-2017.7.27.1.tar.gz"
-    sha256 "40523d2efb60523e113b44602298f0960e900388cf3bb6043f645cf57ea9e3f5"
+    url "https://pypi.io/packages/source/c/certifi/certifi-2018.4.16.tar.gz"
+    sha256 "13e698f54293db9f89122b0581843a782ad0934a4fe0172d2a980ba77fc61bb7"
   end
 
   resource "chardet" do
@@ -44,13 +47,13 @@ class VirtManager < Formula
   end
 
   resource "urllib3" do
-    url "https://pypi.io/packages/source/u/urllib3/urllib3-1.22.tar.gz"
-    sha256 "cc44da8e1145637334317feebd728bd869a35285b93cbb4cca2577da7e62db4f"
+    url "https://pypi.io/packages/source/u/urllib3/urllib3-1.23.tar.gz"
+    sha256 "a68ac5e15e76e7e5dd2b8f94007233e01effe3e50e8daddf69acfd81cb686baf"
   end
 
   resource "requests" do
-    url "https://pypi.io/packages/source/r/requests/requests-2.18.4.tar.gz"
-    sha256 "9c443e7324ba5b85070c4a818ade28bfabedf16ea10206da1132edaa6dda237e"
+    url "https://pypi.io/packages/source/r/requests/requests-2.19.1.tar.gz"
+    sha256 "ec22d826a36ed72a7358ff3fe56cbd4ba69dd7a6718ffd450ff0e9df7a47ce6a"
   end
 
   resource "ipaddr" do
